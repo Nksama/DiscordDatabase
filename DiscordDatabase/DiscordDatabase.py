@@ -25,7 +25,7 @@ class DiscordDatabase:
         # Should return a list containg only one category with a unique name
         # Empty list means category does not exists
 
-        if category == []:
+        if not category:
             # Create category if doesnot exist
             category = await self.__GUILD.create_category(category_name)
         else:
@@ -39,7 +39,7 @@ class DiscordDatabase:
         # Should return a list containg only one channel with a unique name
         # Empty list means channel doesnot exists
 
-        if channel == []:
+        if not channel:
             # Create a new channel under category
             channel = await category.create_text_channel(channel_name)
         else:
