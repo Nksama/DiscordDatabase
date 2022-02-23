@@ -54,13 +54,13 @@ class Database:
             value = data[str(key)]
             value_type = data["type"]
 
-            if value_type == "int":
-                value = int(value)
+            if value_type == "bool":
+                value = bool(int(value))
             elif value_type == "float":
                 value = float(value)
 
-            if value_type == "bool":
-                value = bool(int(value))
+            elif value_type == "int":
+                value = int(value)
         else:
             value = None
         return value
